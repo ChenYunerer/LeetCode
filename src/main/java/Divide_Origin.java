@@ -12,6 +12,7 @@ public class Divide_Origin {
     }
 
     public static int divide(int dividend, int divisor) {
+        //^位异或运算 相同则为0，不相同则为1
         boolean sign = (dividend > 0) ^ (divisor > 0);
         if (dividend > 0) {
             dividend = -dividend;
