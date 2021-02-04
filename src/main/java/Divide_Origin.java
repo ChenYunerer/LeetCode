@@ -1,4 +1,4 @@
-public class Solution {
+public class Divide_Origin {
 
     public static void main(String[] args) {
         System.out.println(divide(-2147483648, -1));
