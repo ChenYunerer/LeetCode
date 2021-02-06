@@ -6,7 +6,7 @@
  * 对于边界情况：
  * 边界情况001XXXX或是XXXXX100并没有出现连续的3个0但是也可以种，这里可以在数组前后各添加一个0来解决
  */
-public class CanPlaceFlowers {
+public class CanPlaceFlowers_Origin {
 
     public static void main(String[] args) {
         int[] flowerbed = new int[]{
