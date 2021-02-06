@@ -1,3 +1,5 @@
+package leetcode424;
+
 /**
  * https://leetcode-cn.com/problems/longest-repeating-character-replacement/
  * 思路：

@@ -1,3 +1,5 @@
+package leetcode480;
+
 import java.util.Arrays;
 
 /**

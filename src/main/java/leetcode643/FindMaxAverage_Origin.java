@@ -1,3 +1,5 @@
+package leetcode643;
+
 /**
  * https://leetcode-cn.com/problems/maximum-average-subarray-i/
  * 思路：

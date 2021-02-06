@@ -1,3 +1,5 @@
+package leetcode605;
+
 /**
  * https://leetcode-cn.com/problems/can-place-flowers/
  * 思路：

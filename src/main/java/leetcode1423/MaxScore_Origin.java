@@ -1,3 +1,5 @@
+package leetcode1423;
+
 /**
  * https://leetcode-cn.com/problems/maximum-points-you-can-obtain-from-cards/
  * 思路：
