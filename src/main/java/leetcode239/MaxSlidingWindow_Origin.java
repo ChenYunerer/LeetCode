@@ -9,7 +9,7 @@ import java.util.PriorityQueue;
  * 滑动窗口中的最大值通过优先级队列(大根堆)维护
  * 每次获取队列头部节点就是当前窗口的最大值
  * 问题：
- * 超时了 待优化
+ * todo 超时了 待优化
  */
 public class MaxSlidingWindow_Origin {
 
