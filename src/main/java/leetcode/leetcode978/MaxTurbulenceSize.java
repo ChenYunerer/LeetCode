@@ -1,4 +1,4 @@
-package leetcode978;
+package leetcode.leetcode978;
 
 /**
  * https://leetcode-cn.com/problems/longest-turbulent-subarray/

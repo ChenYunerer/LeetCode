@@ -1,4 +1,4 @@
-package leetcode424;
+package leetcode.leetcode424;
 
 /**
  * https://leetcode-cn.com/problems/longest-repeating-character-replacement/

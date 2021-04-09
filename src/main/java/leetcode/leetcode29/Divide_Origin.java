@@ -1,4 +1,4 @@
-package leetcode29;
+package leetcode.leetcode29;
 
 /**
  * https://leetcode-cn.com/problems/divide-two-integers/

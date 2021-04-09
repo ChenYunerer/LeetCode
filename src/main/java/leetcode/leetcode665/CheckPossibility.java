@@ -1,4 +1,4 @@
-package leetcode665;
+package leetcode.leetcode665;
 
 /**
  * https://leetcode-cn.com/problems/non-decreasing-array/

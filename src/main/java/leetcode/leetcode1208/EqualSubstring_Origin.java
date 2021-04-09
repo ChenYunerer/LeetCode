@@ -1,4 +1,4 @@
-package leetcode1208;
+package leetcode.leetcode1208;
 
 /**
  * https://leetcode-cn.com/problems/get-equal-substrings-within-budget/

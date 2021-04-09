@@ -1,4 +1,4 @@
-package leetcode643;
+package leetcode.leetcode643;
 
 /**
  * https://leetcode-cn.com/problems/maximum-average-subarray-i/
