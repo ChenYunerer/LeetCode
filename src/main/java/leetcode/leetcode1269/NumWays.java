@@ -6,6 +6,6 @@ package leetcode.leetcode1269;
 public class NumWays {
 
     public int numWays(int steps, int arrLen) {
-
+        return 0;
     }
 }
