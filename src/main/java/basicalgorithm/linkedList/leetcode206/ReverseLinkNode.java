@@ -1,10 +1,11 @@
-package basicalgorithm;
+package basicalgorithm.linkedList.leetcode206;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
  * 反转链表
+ * https://leetcode.cn/problems/reverse-linked-list/
  */
 public class ReverseLinkNode {
 
