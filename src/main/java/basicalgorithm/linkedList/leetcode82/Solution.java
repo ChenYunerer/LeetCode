@@ -7,9 +7,12 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        ListNode listNode = solution.genListNode(new int[]{0, 0, 1, 1, 2, 2, 3});
-        solution.printLinkNode(listNode);
-        ListNode result = solution.deleteDuplicates(listNode);
+        ListNode listNode1 = solution.genListNode(new int[]{1, 2, 3, 3, 4, 4, 5});
+        ListNode listNode2 = solution.genListNode(new int[]{1, 1, 1, 2, 3, 4, 5});
+        ListNode listNode3 = solution.genListNode(new int[]{1, 1, 1});
+        ListNode listNode4 = solution.genListNode(new int[]{1, 2, 2});
+        solution.printLinkNode(listNode3);
+        ListNode result = solution.deleteDuplicates(listNode3);
         solution.printLinkNode(result);
     }
 
@@ -25,6 +28,10 @@ public class Solution {
     }
 
     public void printLinkNode(ListNode head) {
+        if (head == null) {
+            System.out.println("null");
+            return;
+        }
         String str = String.valueOf(head.val);
         while (head.next != null) {
             str = str + "-->" + head.next.val;
@@ -37,8 +44,42 @@ public class Solution {
         if (head == null) {
             return null;
         }
-        // todo
-        return null;
+        if (head.next == null) {
+            return head;
+        }
+        ListNode resultHead = null;
+        ListNode pre = null;
+        ListNode cur = head;
+        Integer duplicateValue = null;
+        while (cur.next != null) {
+            if (duplicateValue != null && cur.val == duplicateValue) {
+                cur = cur.next;
+                if (pre != null) {
+                    pre.next = cur;
+                } else {
+                    resultHead = cur;
+                }
+            } else {
+                if (cur.val == cur.next.val) {
+                    duplicateValue = cur.val;
+                    cur = cur.next;
+                    if (pre != null) {
+                        pre.next = cur;
+                    }
+                } else {
+                    if (resultHead == null) {
+                        resultHead = cur;
+                    }
+                    duplicateValue = null;
+                    pre = cur;
+                    cur = cur.next;
+                }
+            }
+        }
+        if (duplicateValue != null && cur.val == duplicateValue && pre != null) {
+            pre.next = null;
+        }
+        return resultHead;
     }
 
 
