@@ -7,30 +7,36 @@ package basicalgorithm.linkedList.leetcode1171;
 public class Solution {
 
     public ListNode removeZeroSumSublists(ListNode head) {
-        if (head == null || head.next == null) {
+        if (head == null) {
             return head;
         }
+
+        // 涉及到删除 头节点也可能被删除 所以搞个虚拟头
         ListNode vHead = new ListNode();
         vHead.next = head;
 
         ListNode pre = vHead;
         ListNode cur = head;
 
-        a:
-        while (cur.next != null) {
-            // 滑动窗口的头cur尾end 开始滑动
+        while (cur != null) {
+            // 滑动窗口开始滑动 end表示剩余子串的头节点(滑动窗口尾部的.next)
             ListNode end = cur.next;
             int total = cur.val;
-            b:
-            while (end.next != null) {
+
+            while (total != 0 && end != null) {
                 total = total + end.val;
-                if (total == 0) {
-                    break b;
-                }
                 end = end.next;
             }
+            // 如果total等于0则说明出现了需要删除的子串 当前end为剩余子串的头（可能为null）
+            if (total == 0) {
+                // 删除子串
+                pre.next = end;
+                cur = pre.next;
+            } else {
+                pre = cur;
+                cur = cur.next;
+            }
 
-            cur = cur.next;
         }
         return vHead.next;
     }
