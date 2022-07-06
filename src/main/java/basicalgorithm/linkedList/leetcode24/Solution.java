@@ -1,7 +1,5 @@
 package basicalgorithm.linkedList.leetcode24;
 
-import basicalgorithm.linkedList.leetcode24.Solution.ListNode;
-
 /**
  * 24. 两两交换链表中的节点
  * https://leetcode.cn/problems/swap-nodes-in-pairs/
@@ -17,7 +15,18 @@ public class Solution {
         ListNode vHead = new ListNode();
         vHead.next = head;
 
-        ListNode
+        ListNode pre = vHead;
+        ListNode cur = pre.next;
+        while (cur != null && cur.next != null) {
+            pre.next = cur.next;
+            ListNode temp = cur.next.next;
+            cur.next.next = cur;
+            cur.next = temp;
+
+            pre = cur;
+            cur = cur.next;
+        }
+        return vHead.next;
     }
 
     public class ListNode {
