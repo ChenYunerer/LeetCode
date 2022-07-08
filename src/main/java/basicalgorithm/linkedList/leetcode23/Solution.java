@@ -9,7 +9,7 @@ package basicalgorithm.linkedList.leetcode23;
 public class Solution {
 
     public ListNode mergeKLists(ListNode[] lists) {
-
+        return null;
     }
 
     public class ListNode {
