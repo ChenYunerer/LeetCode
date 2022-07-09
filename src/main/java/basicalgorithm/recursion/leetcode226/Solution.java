@@ -19,6 +19,20 @@ public class Solution {
         return root;
     }
 
+    /**
+     * 上面这种的优化写法（思路一致）
+     */
+    public TreeNode invertTree2(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        TreeNode left = invertTree2(root.left);
+        TreeNode right = invertTree2(root.right);
+        root.left = right;
+        root.right = left;
+        return root;
+    }
+
 
     public class TreeNode {
         int val;
