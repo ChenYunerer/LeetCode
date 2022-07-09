@@ -49,6 +49,32 @@ public class Solution {
         return result;
     }
 
+    public ListNode deleteDuplicatesRecursion(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode nextListNode = doDeleteDuplicatesRecursion(head.next);
+        if (head.val == nextListNode.val) {
+            head.next = nextListNode.next;
+        } else {
+            head.next = nextListNode;
+        }
+        return head;
+    }
+
+    public ListNode doDeleteDuplicatesRecursion(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode nextListNode = doDeleteDuplicatesRecursion(head.next);
+        if (head.val == nextListNode.val) {
+            head.next = nextListNode.next;
+        } else {
+            head.next = nextListNode;
+        }
+        return head;
+    }
+
 
     public class ListNode {
         int val;
