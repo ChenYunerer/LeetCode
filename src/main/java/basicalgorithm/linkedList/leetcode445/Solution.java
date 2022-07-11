@@ -1,5 +1,7 @@
 package basicalgorithm.linkedList.leetcode445;
 
+import java.util.Stack;
+
 /**
  * 445. 两数相加 II
  * <p>
@@ -46,6 +48,32 @@ public class Solution {
             cur = temp;
         }
         return pre;
+    }
+
+    public ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
+        Stack<Integer> l1Stack = new Stack<>();
+        while (l1 != null) {
+            l1Stack.push(l1.val);
+            l1 = l1.next;
+        }
+
+        Stack<Integer> l2Stack = new Stack<>();
+        while (l2 != null) {
+            l2Stack.push(l2.val);
+            l2 = l2.next;
+        }
+        int factor = 0;
+        ListNode head = null;
+        while (l1Stack.size() != 0 || l2Stack.size() != 0 || factor != 0) {
+            int val = (l1Stack.size() == 0 ? 0 : l1Stack.pop()) + (l2Stack.size() == 0 ? 0 : l2Stack.pop()) + factor;
+            factor = val / 10;
+            val = val % 10;
+            ListNode newHead = new ListNode();
+            newHead.val = val;
+            newHead.next = head;
+            head = newHead;
+        }
+        return head;
     }
 
     public class ListNode {
