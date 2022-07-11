@@ -3,6 +3,7 @@ package basicalgorithm.linkedList.leetcode83;
 /**
  * 83. 删除排序链表中的重复元素
  * https://leetcode.cn/problems/remove-duplicates-from-sorted-list/
+ * todo review
  */
 public class Solution {
 
@@ -49,24 +50,12 @@ public class Solution {
         return result;
     }
 
+
     public ListNode deleteDuplicatesRecursion(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }
-        ListNode nextListNode = doDeleteDuplicatesRecursion(head.next);
-        if (head.val == nextListNode.val) {
-            head.next = nextListNode.next;
-        } else {
-            head.next = nextListNode;
-        }
-        return head;
-    }
-
-    public ListNode doDeleteDuplicatesRecursion(ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
-        }
-        ListNode nextListNode = doDeleteDuplicatesRecursion(head.next);
+        ListNode nextListNode = deleteDuplicatesRecursion(head.next);
         if (head.val == nextListNode.val) {
             head.next = nextListNode.next;
         } else {
