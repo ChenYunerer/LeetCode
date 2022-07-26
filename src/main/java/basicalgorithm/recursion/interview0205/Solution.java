@@ -43,7 +43,8 @@ public class Solution {
      * 输出：9 -> 1 -> 2，即912
      * <p>
      * <p>
-     * 反转链表后处理完再反转回来
+     * 方式1 反转链表后处理完再反转回来
+     * 方式2 用栈处理
      */
     public ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
         return null;
