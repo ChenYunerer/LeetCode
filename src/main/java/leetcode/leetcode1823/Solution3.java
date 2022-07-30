@@ -15,8 +15,10 @@ public class Solution3 {
 
     /**
      * 通过单向链表构建一个环来模拟场景，通过递归删除对应位置的节点，直到只剩一个节点结束
+     * 对k==1做特殊处理就可以不用双向链表了，简单一点
      */
     public int findTheWinner(int n, int k) {
+        // 对k==1做特殊处理就可以不用双向链表了，简单一点
         if (k == 1) {
             return n;
         }
