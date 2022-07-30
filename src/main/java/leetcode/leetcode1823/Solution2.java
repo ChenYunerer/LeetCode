@@ -1,4 +1,4 @@
-package basicalgorithm.linkedList.leetcode1823;
+package leetcode.leetcode1823;
 
 import java.util.ArrayDeque;
 import java.util.Queue;

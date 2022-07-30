@@ -1,4 +1,4 @@
-package basicalgorithm.linkedList.leetcode1823;
+package leetcode.leetcode1823;
 
 /**
  * 1823. 找出游戏的获胜者
