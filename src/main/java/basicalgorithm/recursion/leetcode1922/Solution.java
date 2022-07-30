@@ -10,18 +10,17 @@ public class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
         // n 50 except 564908303
-        int result = solution.countGoodNumbers(50);
+        long result = solution.doCountGoodNumbers(50);
         System.out.println(result);
     }
 
-    //public int countGoodNumbers(long n) {
-    //    int k = 1000000007;
-    //    int result = doCountGoodNumbers(n);
-    //    return result % k;
-    //}
-
     public int countGoodNumbers(long n) {
-        // 帮帮孩子 %k 放哪里都不对 n=50就是过不了
+        int k = 1000000007;
+        long result = doCountGoodNumbers(n);
+        return (int) (result % k);
+    }
+
+    public long doCountGoodNumbers(long n) {
         int k = 1000000007;
         if (n == 1) {
             return 5;
@@ -29,6 +28,9 @@ public class Solution {
         if (n == 2) {
             return 5 * 4;
         }
-        return countGoodNumbers(n / 2) * countGoodNumbers(n - (n / 2));
+        long part1 = doCountGoodNumbers(n / 2);
+        long part2 = doCountGoodNumbers(n - (n / 2));
+        long result = ((part1 % k) * (part2 % k)) % k;
+        return result;
     }
 }
