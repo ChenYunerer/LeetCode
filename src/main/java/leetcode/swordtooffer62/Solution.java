@@ -19,6 +19,7 @@ public class Solution {
 
     /**
      * 借助队列进行模拟
+     * 会超时
      */
     public int lastRemaining(int n, int k) {
         Queue<Integer> queue = new ArrayDeque<>();
