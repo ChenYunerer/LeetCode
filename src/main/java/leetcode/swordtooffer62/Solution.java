@@ -1,29 +1,29 @@
-package leetcode.leetcode1823;
+package leetcode.swordtooffer62;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
 
 /**
- * 1823. 找出游戏的获胜者
- * https://leetcode.cn/problems/find-the-winner-of-the-circular-game/
+ * 剑指 Offer 62. 圆圈中最后剩下的数字
+ * https://leetcode.cn/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/
  */
-public class Solution2 {
-
+public class Solution {
 
     public static void main(String[] args) {
-        Solution2 solution = new Solution2();
-        int result = solution.findTheWinner(5, 2);
+        Solution solution = new Solution();
+
+        int result = solution.lastRemaining(6, 7);
+
         System.out.println(result);
     }
 
     /**
-     * 通过队列进行模拟
-     * 注意k很大的时候 其实是没有意义的
+     * 借助队列进行模拟
      */
-    public int findTheWinner(int n, int k) {
+    public int lastRemaining(int n, int k) {
         Queue<Integer> queue = new ArrayDeque<>();
-        int i = 1;
-        while (i <= n) {
+        int i = 0;
+        while (i < n) {
             queue.offer(i);
             i++;
         }
