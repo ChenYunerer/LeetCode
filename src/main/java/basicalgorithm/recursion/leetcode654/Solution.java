@@ -13,6 +13,9 @@ public class Solution {
         System.out.println(treeNode);
     }
 
+    /**
+     * 分治思路
+     */
     public TreeNode constructMaximumBinaryTree(int[] nums) {
         TreeNode treeNode = doConstructMaximumBinaryTree(nums, 0, nums.length - 1);
         return treeNode;
