@@ -1,4 +1,4 @@
-package basicalgorithm.tree.leetcode297;
+package basicalgorithm.tree.swordtooffer37;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -7,7 +7,7 @@ import java.util.LinkedList;
  * 297. 二叉树的序列化与反序列化
  * https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/
  */
-public class Codec {
+public class Codec_BFS {
 
     // BFS思路
     // Encodes a tree to a single string.

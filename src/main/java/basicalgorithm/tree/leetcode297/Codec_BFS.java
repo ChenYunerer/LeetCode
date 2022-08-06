@@ -1,4 +1,4 @@
-package basicalgorithm.tree.swordtooffer37;
+package basicalgorithm.tree.leetcode297;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -7,8 +7,9 @@ import java.util.LinkedList;
  * 297. 二叉树的序列化与反序列化
  * https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/
  */
-public class Codec {
+public class Codec_BFS {
 
+    // BFS思路
     // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
         if (root == null) {
@@ -32,6 +33,7 @@ public class Codec {
         return resultSB.substring(0, resultSB.length() - 1);
     }
 
+    // BFS思路
     // Decodes your encoded data to tree.
     public TreeNode deserialize(String data) {
         if (data == null) {
@@ -51,13 +53,13 @@ public class Codec {
         nodeDeque.offer(root);
         while (!nodeDeque.isEmpty()) {
             TreeNode node = nodeDeque.poll();
-            Integer leftVal = integerDeque.isEmpty() ? null : integerDeque.poll();
+            Integer leftVal = integerDeque.poll();
             if (leftVal != null) {
                 TreeNode leftNode = new TreeNode(leftVal);
                 node.left = leftNode;
                 nodeDeque.offer(leftNode);
             }
-            Integer rightVal = integerDeque.isEmpty() ? null : integerDeque.poll();
+            Integer rightVal = integerDeque.poll();
             if (rightVal != null) {
                 TreeNode rightNode = new TreeNode(rightVal);
                 node.right = rightNode;
