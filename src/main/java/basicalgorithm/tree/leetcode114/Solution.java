@@ -6,6 +6,9 @@ package basicalgorithm.tree.leetcode114;
  */
 public class Solution {
 
+    /**
+     * 前一个节点
+     */
     private TreeNode pre;
 
     public void flatten(TreeNode root) {
@@ -15,8 +18,10 @@ public class Solution {
         if (pre == null) {
             pre = root;
         }
+        // 事先把right节点记录下来，避免递归把right引用改了
         TreeNode rightTemp = root.right;
         if (pre != root) {
+            // 进行链表化操作，这里会改pre的right引用，所以上面的right得事先取出来
             pre.right = root;
             pre.left = null;
             pre = root;
