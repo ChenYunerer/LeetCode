@@ -1,40 +1,25 @@
 package basicalgorithm.tree.leetcode116;
 
-import java.util.Deque;
-import java.util.LinkedList;
-
 /**
  * 116. 填充每个节点的下一个右侧节点指针
  * https://leetcode.cn/problems/populating-next-right-pointers-in-each-node/
  */
-public class Solution {
+public class Solution2 {
+
 
     /**
-     * BFS
+     * DFS 前序遍历
      */
     public Node connect(Node root) {
         if (root == null) {
             return root;
         }
-        Deque<Node> queue = new LinkedList<>();
-        queue.offer(root);
-        while (!queue.isEmpty()) {
-            int levelCount = queue.size();
-            Node pre = queue.peek();
-            for (int i = 0; i < levelCount; i++) {
-                Node curNode = queue.poll();
-                if (pre != curNode) {
-                    pre.next = curNode;
-                    pre = curNode;
-                }
-                if (curNode.left != null) {
-                    queue.offer(curNode.left);
-                }
-                if (curNode.right != null) {
-                    queue.offer(curNode.right);
-                }
-            }
+        if (root.left != null) {
+            root.left.next = root.right;
+            root.right.next = (root.next != null && root.next.left != null) ? root.next.left : null;
         }
+        connect(root.left);
+        connect(root.right);
         return root;
     }
 
