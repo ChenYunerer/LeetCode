@@ -8,6 +8,7 @@ import java.util.List;
  * https://leetcode.cn/problems/binary-tree-inorder-traversal/
  */
 public class Solution {
+
     public List<Integer> result = new ArrayList<>();
 
     /**

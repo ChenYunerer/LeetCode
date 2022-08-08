@@ -11,6 +11,22 @@ import java.util.List;
  */
 public class Solution2 {
 
+    public List<Integer> result = new ArrayList<>();
+
+    /**
+     * 递归
+     */
+    public List<Integer> inorderTraversal1(Solution.TreeNode root) {
+        if (root == null) {
+            return result;
+        }
+        inorderTraversal1(root.left);
+        result.add(root.val);
+        inorderTraversal1(root.right);
+        return result;
+    }
+
+
     /**
      * 迭代
      * todo review 搞不懂
