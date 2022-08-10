@@ -29,7 +29,6 @@ public class Solution2 {
 
     /**
      * 迭代
-     * todo review 搞不懂
      */
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
