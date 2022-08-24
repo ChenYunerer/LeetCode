@@ -33,4 +33,9 @@ public class TreeNode {
     public int hashCode() {
         return Objects.hash(val);
     }
+
+    @Override
+    public String toString() {
+        return String.valueOf(val);
+    }
 }
