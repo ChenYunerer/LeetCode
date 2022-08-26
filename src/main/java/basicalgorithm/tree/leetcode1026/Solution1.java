@@ -12,6 +12,8 @@ public class Solution1 {
     /**
      * 执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
      * 内存消耗：41.1 MB, 在所有 Java 提交中击败了75.93%的用户
+     * <p>
+     * 用DFS参数携带路径的方式思考这道题，只不过把参数从路径换为了上下边界，原来处理路径改为计算最大上界和最小下界
      */
     public int maxAncestorDiff(TreeNode root) {
         if (root == null) {
@@ -43,7 +45,7 @@ public class Solution1 {
         int leftMaxAncestorDiff = dfs(root.left, min, max);
         // 递归处理右子树（路径往右走）
         int rightMaxAncestorDiff = dfs(root.right, min, max);
-        // 反回最大差值
+        // 返回最大差值的最大值
         return Math.max(leftMaxAncestorDiff, rightMaxAncestorDiff);
     }
 
