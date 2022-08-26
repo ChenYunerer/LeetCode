@@ -23,6 +23,7 @@ public class Solution {
 
         int leftMaxAncestorDiff = dfs(root.left, Math.min(min, root.val), Math.max(max, root.val));
         int rightMaxAncestorDiff = dfs(root.right, Math.min(min, root.val), Math.max(max, root.val));
+        // todo 最终答案加不加这一行都是ok的，但是我觉得就得加这一行，为啥不加也行
         int currentMaxAncestorDiff = max - min;
         return Math.max(Math.max(leftMaxAncestorDiff, rightMaxAncestorDiff), currentMaxAncestorDiff);
     }
