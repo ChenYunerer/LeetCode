@@ -5,23 +5,20 @@ import basicalgorithm.tree.base.TreeNode;
 /**
  * 437. 路径总和 III
  * https://leetcode.cn/problems/path-sum-iii/
+ * todo 尝试前缀和算法
  */
 public class Solution {
 
     public int pathSum(TreeNode root, int targetSum) {
-        return dfs(root, targetSum) + pathSum(root == null ? null : root.left, targetSum) + pathSum(root == null ? null : root.right, targetSum);
+        return (int) (dfs(root, targetSum) + (root == null ? 0 : (pathSum(root.left, targetSum) + pathSum(root.right, targetSum))));
     }
 
-    private int dfs(TreeNode root, int targetSum) {
+    private long dfs(TreeNode root, long targetSum) {
         if (root == null) {
             return 0;
         }
-        if (root.val == targetSum) {
-            return 1;
-        }
-        targetSum = targetSum - root.val;
-        int leftVal = dfs(root.left, targetSum);
-        int rightVal = dfs(root.right, targetSum);
-        return leftVal + rightVal;
+        long leftVal = dfs(root.left, targetSum - root.val);
+        long rightVal = dfs(root.right, targetSum - root.val);
+        return (root.val == targetSum ? 1 : 0) + leftVal + rightVal;
     }
 }
