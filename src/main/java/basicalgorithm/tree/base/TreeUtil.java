@@ -39,6 +39,21 @@ public class TreeUtil {
         return root;
     }
 
+    public static TreeNode searchByVal(TreeNode root, int val) {
+        if (root == null) {
+            return null;
+        }
+        if (root.val == val) {
+            return root;
+        }
+        TreeNode leftRes = searchByVal(root.left, val);
+        if (leftRes != null) {
+            return leftRes;
+        }
+        TreeNode rightRes = searchByVal(root.right, val);
+        return rightRes;
+    }
+
 
     public static void printTreeNode(TreeNode root) {
         if (root == null) {
