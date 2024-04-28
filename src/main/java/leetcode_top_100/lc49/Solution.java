@@ -24,6 +24,7 @@ public class Solution {
     }
 
 
+    // best
     public List<List<String>> groupAnagrams1(String[] strs) {
         Map<String, List<String>> map = new HashMap<>();
         for (String str : strs) {
