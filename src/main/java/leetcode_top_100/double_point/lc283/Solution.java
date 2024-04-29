@@ -1,4 +1,4 @@
-package leetcode_top_100.lc283;
+package leetcode_top_100.double_point.lc283;
 
 /**
  * https://leetcode.cn/problems/move-zeroes/?envType=study-plan-v2&envId=top-100-liked

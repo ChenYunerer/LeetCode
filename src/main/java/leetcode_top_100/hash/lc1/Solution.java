@@ -1,4 +1,4 @@
-package leetcode_top_100.lc1;
+package leetcode_top_100.hash.lc1;
 
 import java.util.ArrayList;
 import java.util.HashMap;

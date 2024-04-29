@@ -1,4 +1,4 @@
-package leetcode_top_100.lc128;
+package leetcode_top_100.hash.lc128;
 
 import java.util.HashSet;
 import java.util.Set;

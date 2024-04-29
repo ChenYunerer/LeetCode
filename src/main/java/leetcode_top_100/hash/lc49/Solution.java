@@ -1,4 +1,4 @@
-package leetcode_top_100.lc49;
+package leetcode_top_100.hash.lc49;
 
 import java.util.*;
 
