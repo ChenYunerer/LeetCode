@@ -29,6 +29,7 @@ public class Solution {
         return new ArrayList<>(res);
     }
 
+    // best
     public List<List<Integer>> threeSum1(int[] nums) {
         Set<List<Integer>> res = new HashSet<>();
         Arrays.sort(nums);
