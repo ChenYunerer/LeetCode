@@ -10,36 +10,34 @@ import java.util.List;
 public class Solution {
 
     public List<Integer> findAnagrams(String s, String p) {
-        if (s == null || p == null || s.length() < p.length()) return new ArrayList<>();
-        int[] count1 = new int[26];
-        for (char c : p.toCharArray()) {
-            count1[c - 'a']++;
+        int sLen = s.length(), pLen = p.length();
+        if (sLen < pLen) {
+            return new ArrayList<Integer>();
         }
-        List<Integer> ans = new ArrayList<>();
-        int left = 0;
-        int right = 0;
-        int[] count2 = new int[26];
-        while (right <= s.length()) {
-            if (right < p.length()) {
-                count2[s.charAt(right) - 'a']++;
-                right++;
-            }
-            if (right - left == p.length()) {
-                if (Arrays.equals(count1, count2)) {
-                    ans.add(left);
-                }
-                count2[s.charAt(left) - 'a']--;
-                left++;
-                if (right < s.length()) {
-                    count2[s.charAt(right) - 'a']++;
-                }
-                right++;
+        List<Integer> ans = new ArrayList<Integer>();
+        int[] sCount = new int[26];
+        int[] pCount = new int[26];
+        for (int i = 0; i < pLen; ++i) {
+            ++sCount[s.charAt(i) - 'a'];
+            ++pCount[p.charAt(i) - 'a'];
+        }
+
+        if (Arrays.equals(sCount, pCount)) {
+            ans.add(0);
+        }
+
+        for (int i = 0; i < sLen - pLen; ++i) {
+            --sCount[s.charAt(i) - 'a'];
+            ++sCount[s.charAt(i + pLen) - 'a'];
+
+            if (Arrays.equals(sCount, pCount)) {
+                ans.add(i + 1);
             }
         }
         return ans;
     }
 
     public static void main(String[] args) {
-        new Solution().findAnagrams("abab", "ab");
+        new Solution().findAnagrams("cbaebabacd", "abc");
     }
 }
