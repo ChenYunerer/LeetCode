@@ -8,6 +8,7 @@ import java.util.LinkedList;
  */
 public class Solution {
 
+    // 单调栈
     public int[] maxSlidingWindow(int[] nums, int k) {
         Deque<Integer> deque = new LinkedList<>();
         for (int i = 0; i < k; i++) {
