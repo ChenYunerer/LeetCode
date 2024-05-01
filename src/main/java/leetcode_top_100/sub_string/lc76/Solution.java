@@ -2,6 +2,9 @@ package leetcode_top_100.sub_string.lc76;
 
 import java.util.Arrays;
 
+/**
+ * https://leetcode.cn/problems/minimum-window-substring/description/?envType=study-plan-v2&envId=top-100-liked
+ */
 public class Solution {
 
     Map<Character, Integer> ori = new HashMap<Character, Integer>();
