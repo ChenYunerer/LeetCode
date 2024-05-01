@@ -10,8 +10,8 @@ import java.util.Map;
  */
 public class Solution {
 
-    Map<Character, Integer> ori = new HashMap<Character, Integer>();
-    Map<Character, Integer> cnt = new HashMap<Character, Integer>();
+    Map<Character, Integer> ori = new HashMap<>();
+    Map<Character, Integer> cnt = new HashMap<>();
 
     public String minWindow(String s, String t) {
         int tLen = t.length();
