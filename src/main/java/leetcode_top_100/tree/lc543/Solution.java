@@ -8,7 +8,27 @@ import basicalgorithm.tree.base.TreeNode;
  */
 public class Solution {
 
-    public int diameterOfBinaryTree(TreeNode root) {
+    int maxDiameter = 0;
 
+    public int diameterOfBinaryTree(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        maxDeep(root);
+        return maxDiameter;
+    }
+
+    public int maxDeep(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int leftDeep = maxDeep(root.left);
+        int rightDeep = maxDeep(root.right);
+        int currentHigh = Math.max(leftDeep, rightDeep) + 1;
+        int diameter = leftDeep + rightDeep;
+        if (maxDiameter < diameter) {
+            maxDiameter = diameter;
+        }
+        return currentHigh;
     }
 }
