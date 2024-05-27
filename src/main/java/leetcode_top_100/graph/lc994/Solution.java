@@ -7,7 +7,7 @@ package leetcode_top_100.graph.lc994;
 public class Solution {
 
     public int orangesRotting(int[][] grid) {
-
+        return 0;
     }
 
 
