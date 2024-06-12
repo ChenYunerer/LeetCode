@@ -1,7 +1,5 @@
 package other;
 
-import com.alibaba.fastjson2.JSON;
-
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -48,6 +46,5 @@ public class Test2 {
     public static void main(String[] args) {
         int[] nums = new int[]{5, 5, 3, 4, 6, 7, 8};
         int[] as = maxSlidingWindow(nums, 3);
-        System.out.println(JSON.toJSONString());
     }
 }
