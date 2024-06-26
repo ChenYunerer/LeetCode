@@ -19,5 +19,6 @@ public class Solution {
         while (pushed[pushedIndex] != popped[0]) {
             stack.push(pushed[pushedIndex++]);
         }
+        return false;
     }
 }
