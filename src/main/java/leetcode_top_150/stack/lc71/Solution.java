@@ -2,7 +2,6 @@ package leetcode_top_150.stack.lc71;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.Stack;
 
 /**
  * 71. 简化路径
