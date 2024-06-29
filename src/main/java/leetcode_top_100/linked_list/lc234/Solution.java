@@ -1,6 +1,6 @@
 package leetcode_top_100.linked_list.lc234;
 
-import basicalgorithm.linkedList.base.ListNode;
+import categorized.linkedList.base.ListNode;
 
 /**
  * 234. 回文链表

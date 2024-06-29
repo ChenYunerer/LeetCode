@@ -1,6 +1,6 @@
 package leetcode_top_100.linked_list.lc21;
 
-import basicalgorithm.linkedList.base.ListNode;
+import categorized.linkedList.base.ListNode;
 
 /**
  * 21. 合并两个有序链表

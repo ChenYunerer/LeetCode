@@ -1,6 +1,6 @@
 package leetcode_top_100.tree.lc437;
 
-import basicalgorithm.tree.base.TreeNode;
+import categorized.tree.base.TreeNode;
 
 import java.util.HashMap;
 import java.util.Map;

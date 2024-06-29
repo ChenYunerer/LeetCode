@@ -1,6 +1,6 @@
 package leetcode_top_100.tree.lc543;
 
-import basicalgorithm.tree.base.TreeNode;
+import categorized.tree.base.TreeNode;
 
 /**
  * 543. 二叉树的直径

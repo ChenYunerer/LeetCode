@@ -1,6 +1,6 @@
 package leetcode_top_100.tree.lc230;
 
-import basicalgorithm.tree.base.TreeNode;
+import categorized.tree.base.TreeNode;
 
 /**
  * 230. 二叉搜索树中第K小的元素

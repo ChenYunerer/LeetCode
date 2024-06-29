@@ -1,6 +1,6 @@
 package leetcode_top_100.linked_list.lc24;
 
-import basicalgorithm.linkedList.base.ListNode;
+import categorized.linkedList.base.ListNode;
 
 /**
  * 24. 两两交换链表中的节点

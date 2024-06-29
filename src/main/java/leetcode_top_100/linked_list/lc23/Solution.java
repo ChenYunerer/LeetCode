@@ -1,6 +1,6 @@
 package leetcode_top_100.linked_list.lc23;
 
-import basicalgorithm.linkedList.base.ListNode;
+import categorized.linkedList.base.ListNode;
 
 /**
  * 23. 合并 K 个升序链表

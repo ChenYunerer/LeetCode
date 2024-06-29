@@ -1,6 +1,6 @@
 package leetcode_top_100.tree.lc98;
 
-import basicalgorithm.tree.base.TreeNode;
+import categorized.tree.base.TreeNode;
 
 /**
  * 98. 验证二叉搜索树

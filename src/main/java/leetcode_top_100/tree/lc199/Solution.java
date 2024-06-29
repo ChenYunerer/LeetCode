@@ -1,6 +1,6 @@
 package leetcode_top_100.tree.lc199;
 
-import basicalgorithm.tree.base.TreeNode;
+import categorized.tree.base.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

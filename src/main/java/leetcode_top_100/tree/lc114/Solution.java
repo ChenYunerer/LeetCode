@@ -1,6 +1,6 @@
 package leetcode_top_100.tree.lc114;
 
-import basicalgorithm.tree.base.TreeNode;
+import categorized.tree.base.TreeNode;
 
 /**
  * 114. 二叉树展开为链表

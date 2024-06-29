@@ -1,6 +1,6 @@
 package leetcode_top_100.linked_list.lc160;
 
-import basicalgorithm.linkedList.base.ListNode;
+import categorized.linkedList.base.ListNode;
 
 import java.util.HashSet;
 

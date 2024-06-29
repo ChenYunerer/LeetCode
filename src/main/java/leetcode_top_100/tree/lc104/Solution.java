@@ -1,6 +1,6 @@
 package leetcode_top_100.tree.lc104;
 
-import basicalgorithm.tree.base.TreeNode;
+import categorized.tree.base.TreeNode;
 
 /**
  * 104. 二叉树的最大深度

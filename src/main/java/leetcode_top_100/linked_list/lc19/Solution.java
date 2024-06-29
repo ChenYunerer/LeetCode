@@ -1,6 +1,6 @@
 package leetcode_top_100.linked_list.lc19;
 
-import basicalgorithm.linkedList.base.ListNode;
+import categorized.linkedList.base.ListNode;
 
 /**
  * 19. 删除链表的倒数第 N 个结点

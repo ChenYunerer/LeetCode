@@ -1,6 +1,6 @@
 package leetcode_top_100.tree.lc226;
 
-import basicalgorithm.tree.base.TreeNode;
+import categorized.tree.base.TreeNode;
 
 /**
  * 226. 翻转二叉树
