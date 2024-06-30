@@ -39,4 +39,79 @@ public class Solution {
         }
         return dummy.next;
     }
+
+
+    /**
+     * 顺序合并
+     */
+    public ListNode mergeKLists0(ListNode[] lists) {
+        ListNode ans = null;
+        for (int i = 0; i < lists.length; ++i) {
+            ans = mergeTwoLists0(ans, lists[i]);
+        }
+        return ans;
+    }
+
+    public ListNode mergeTwoLists0(ListNode a, ListNode b) {
+        if (a == null || b == null) {
+            return a != null ? a : b;
+        }
+        ListNode head = new ListNode(0);
+        ListNode tail = head, aPtr = a, bPtr = b;
+        while (aPtr != null && bPtr != null) {
+            if (aPtr.val < bPtr.val) {
+                tail.next = aPtr;
+                aPtr = aPtr.next;
+            } else {
+                tail.next = bPtr;
+                bPtr = bPtr.next;
+            }
+            tail = tail.next;
+        }
+        tail.next = (aPtr != null ? aPtr : bPtr);
+        return head.next;
+    }
+
+
+    /**
+     * 分治合并
+     */
+    public ListNode mergeKLists1(ListNode[] lists) {
+        return mergeKLists1(lists, 0, lists.length - 1);
+    }
+
+    public ListNode mergeKLists1(ListNode[] lists, int indexStart, int indexEnd) {
+        if (indexStart == indexEnd) {
+            return lists[indexStart];
+        }
+        if (indexStart > indexEnd) {
+            return null;
+        }
+        int mid = (indexStart + indexEnd) / 2;
+        ListNode a = mergeKLists1(lists, indexStart, mid);
+        ListNode b = mergeKLists1(lists, mid + 1, indexEnd);
+        return merge2List(a, b);
+    }
+
+    private ListNode merge2List(ListNode a, ListNode b) {
+        ListNode dummy = new ListNode(0);
+        ListNode cur = dummy;
+        while (a != null && b != null) {
+            if (a.val < b.val) {
+                cur.next = a;
+                a = a.next;
+                cur = cur.next;
+            } else {
+                cur.next = b;
+                b = b.next;
+                cur = cur.next;
+            }
+        }
+        cur.next = a != null ? a : b;
+        return dummy.next;
+    }
+
+
+
+
 }
