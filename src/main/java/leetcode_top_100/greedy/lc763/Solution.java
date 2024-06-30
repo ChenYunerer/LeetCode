@@ -1,7 +1,5 @@
 package leetcode_top_100.greedy.lc763;
 
-import com.alibaba.fastjson2.JSON;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,10 +9,6 @@ import java.util.List;
  */
 public class Solution {
 
-    public static void main(String[] args) {
-        List<Integer> ans = new Solution().partitionLabels("eccbbbbdec");
-        System.out.println(JSON.toJSONString(ans));
-    }
 
     public List<Integer> partitionLabels(String s) {
         List<Integer> ans = new ArrayList<>();
