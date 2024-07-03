@@ -6,6 +6,9 @@ package categorized.greedy.lc53;
  */
 public class Solution {
 
+    /**
+     * 贪心
+     */
     public int maxSubArray(int[] nums) {
         int maxSum = Integer.MIN_VALUE;
         int preSum = 0;
