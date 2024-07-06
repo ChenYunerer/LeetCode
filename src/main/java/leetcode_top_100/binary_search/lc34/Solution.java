@@ -36,4 +36,42 @@ public class Solution {
         }
         return new int[]{left + 1, right - 1};
     }
+
+    /**
+     * best
+     */
+    public int[] searchRange1(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+        int fristIndex = -1;
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (nums[mid] == target) {
+                fristIndex = mid;
+                right = right - 1;
+            } else if (target < nums[mid]) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        if (fristIndex == -1) {
+            return new int[]{-1, -1};
+        }
+        left = 0;
+        right = nums.length - 1;
+        int endIndex = -1;
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (nums[mid] == target) {
+                endIndex = mid;
+                left = left + 1;
+            } else if (target < nums[mid]) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return new int[]{fristIndex, endIndex};
+    }
 }
