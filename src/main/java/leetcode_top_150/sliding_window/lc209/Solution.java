@@ -7,21 +7,17 @@ package leetcode_top_150.sliding_window.lc209;
 public class Solution {
 
     public int minSubArrayLen(int target, int[] nums) {
-        int n = nums.length;
-        if (n == 0) {
-            return 0;
-        }
-        int ans = Integer.MAX_VALUE;
-        int start = 0, end = 0;
+        int left = 0;
+        int right = 0;
         int sum = 0;
-        while (end < n) {
-            sum += nums[end];
+        int ans = Integer.MAX_VALUE;
+        while (right < nums.length) {
+            sum = sum + nums[right];
             while (sum >= target) {
-                ans = Math.min(ans, end - start + 1);
-                sum -= nums[start];
-                start++;
+                ans = Math.min(ans, right - left + 1);
+                sum = sum - nums[left++];
             }
-            end++;
+            right = right + 1;
         }
         return ans == Integer.MAX_VALUE ? 0 : ans;
     }
