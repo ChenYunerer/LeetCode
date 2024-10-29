@@ -7,24 +7,7 @@ import java.util.*;
  */
 public class Solution {
 
-    public List<List<String>> groupAnagrams(String[] strs) {
-        Map<Map<Integer, Integer>, List<String>> map = new HashMap<>();
-        for (String str : strs) {
-            map.computeIfAbsent(getKey(str), k -> new ArrayList<>()).add(str);
-        }
-        return new ArrayList<>(map.values());
-    }
 
-    private Map<Integer, Integer> getKey(String str) {
-        Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < str.length(); i++) {
-            map.put('a' - str.charAt(i), map.getOrDefault('a' - str.charAt(i), 0) + 1);
-        }
-        return map;
-    }
-
-
-    // best
     public List<List<String>> groupAnagrams1(String[] strs) {
         Map<String, List<String>> map = new HashMap<>();
         for (String str : strs) {
