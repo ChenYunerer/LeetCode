@@ -1,10 +1,12 @@
 package leetcode_top_100.double_point.lc283;
 
 /**
+ * 283. 移动零
  * https://leetcode.cn/problems/move-zeroes/?envType=study-plan-v2&envId=top-100-liked
  */
 public class Solution {
 
+    // best
     public void moveZeroes(int[] nums) {
         int j = 0;
         for (int i = 0; i < nums.length; i++) {
