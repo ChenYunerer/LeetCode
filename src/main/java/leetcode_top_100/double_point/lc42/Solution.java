@@ -1,6 +1,7 @@
 package leetcode_top_100.double_point.lc42;
 
 /**
+ * 42. 接雨水
  * https://leetcode.cn/problems/trapping-rain-water/submissions/528138012/?envType=study-plan-v2&envId=top-100-liked
  */
 public class Solution {
