@@ -1,7 +1,6 @@
 package leetcode_top_100.sub_string.lc76;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -10,45 +9,52 @@ import java.util.Map;
  */
 public class Solution {
 
-    Map<Character, Integer> ori = new HashMap<>();
-    Map<Character, Integer> cnt = new HashMap<>();
 
-    public String minWindow(String s, String t) {
-        int tLen = t.length();
-        for (int i = 0; i < tLen; i++) {
-            char c = t.charAt(i);
-            ori.put(c, ori.getOrDefault(c, 0) + 1);
-        }
-        int l = 0, r = -1;
-        int len = Integer.MAX_VALUE, ansL = -1, ansR = -1;
-        int sLen = s.length();
-        while (r < sLen) {
-            ++r;
-            if (r < sLen && ori.containsKey(s.charAt(r))) {
-                cnt.put(s.charAt(r), cnt.getOrDefault(s.charAt(r), 0) + 1);
-            }
-            while (check() && l <= r) {
-                if (r - l + 1 < len) {
-                    len = r - l + 1;
-                    ansL = l;
-                    ansR = l + len;
-                }
-                if (ori.containsKey(s.charAt(l))) {
-                    cnt.put(s.charAt(l), cnt.getOrDefault(s.charAt(l), 0) - 1);
-                }
-                ++l;
-            }
-        }
-        return ansL == -1 ? "" : s.substring(ansL, ansR);
+    public static void main(String[] args) {
+        String s = "ab";
+        String t = "a";
+        String ans = new Solution().minWindow(s, t);
+        System.out.println(ans);
     }
 
-    public boolean check() {
-        Iterator iter = ori.entrySet().iterator();
-        while (iter.hasNext()) {
-            Map.Entry entry = (Map.Entry) iter.next();
-            Character key = (Character) entry.getKey();
-            Integer val = (Integer) entry.getValue();
-            if (cnt.getOrDefault(key, 0) < val) {
+    public String minWindow(String s, String t) {
+        if (s.equals(t)) {
+            return s;
+        }
+        if (t.length() > s.length()) {
+            return "";
+        }
+        Map<Character, Integer> tMap = new HashMap<>();
+        Map<Character, Integer> sMap = new HashMap<>();
+        for (Character c : t.toCharArray()) {
+            tMap.put(c, tMap.getOrDefault(c, 0) + 1);
+        }
+        int left = 0;
+        int right = -1;
+        int ansL = -1;
+        int ansR = -1;
+        while (right < s.length()) {
+            right++;
+            if (right < s.length() && tMap.containsKey(s.charAt(right))) {
+                sMap.put(s.charAt(right), sMap.getOrDefault(s.charAt(right), 0) + 1);
+            }
+            while (left <= right && checkIsAContainB(sMap, tMap)) {
+                if (ansR == -1 || ansR - ansL > right - left) {
+                    ansR = right;
+                    ansL = left;
+                }
+                char sLeftC = s.charAt(left);
+                sMap.put(sLeftC, sMap.getOrDefault(sLeftC, 0) - 1);
+                left++;
+            }
+
+        }
+        return ansL == -1 ? "" : s.substring(ansL, ansR + 1);
+    }
+
+    public boolean checkIsAContainB(Map<Character, Integer> aMap, Map<Character, Integer> bMap) {
+        for (Map.Entry<Character, Integer> entry : bMap.entrySet()) {
+            if (entry.getValue() > 0 && aMap.getOrDefault(entry.getKey(), 0) < entry.getValue()) {
                 return false;
             }
         }
