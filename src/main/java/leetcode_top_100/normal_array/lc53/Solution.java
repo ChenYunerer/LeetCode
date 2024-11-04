@@ -6,6 +6,7 @@ package leetcode_top_100.normal_array.lc53;
  */
 public class Solution {
 
+    // 贪心
     public int maxSubArray(int[] nums) {
         int max = nums[0];
         int mMax = 0;
@@ -20,4 +21,18 @@ public class Solution {
         }
         return max;
     }
+
+    // 前缀和
+    public int maxSubArray1(int[] nums) {
+        int ans = Integer.MIN_VALUE;
+        int minPreSum = 0;
+        int preSum = 0;
+        for (int x : nums) {
+            preSum += x; // 当前的前缀和
+            ans = Math.max(ans, preSum - minPreSum); // 减去前缀和的最小值
+            minPreSum = Math.min(minPreSum, preSum); // 维护前缀和的最小值
+        }
+        return ans;
+    }
+
 }
