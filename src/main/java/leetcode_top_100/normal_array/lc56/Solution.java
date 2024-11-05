@@ -13,24 +13,17 @@ import java.util.List;
 public class Solution {
 
     public int[][] merge(int[][] intervals) {
-        if (intervals == null || intervals.length == 0) return new int[0][2];
-
-        // 将区间按照起始位置排序
-        Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
-
-        List<int[]> merged = new ArrayList<>();
+        Arrays.sort(intervals, Comparator.comparingInt(o -> o[0]));
+        List<int[]> ansList = new ArrayList<>();
         for (int[] interval : intervals) {
-            // 如果当前合并后的区间列表为空，或者当前区间的起始位置大于合并后的区间列表中最后一个区间的结束位置
-            // 则直接将当前区间添加到合并后的区间列表中
-            if (merged.isEmpty() || interval[0] > merged.get(merged.size() - 1)[1]) {
-                merged.add(interval);
+            if (ansList.isEmpty() || ansList.get(ansList.size() - 1)[1] < interval[0]) {
+                ansList.add(interval);
             } else {
-                // 否则，当前区间与合并后的区间列表中最后一个区间有重叠，更新合并后的区间列表中最后一个区间的结束位置
-                merged.get(merged.size() - 1)[1] = Math.max(merged.get(merged.size() - 1)[1], interval[1]);
+                ansList.get(ansList.size() - 1)[1] = Math.max(ansList.get(ansList.size() - 1)[1], interval[1]);
             }
         }
-
-        return merged.toArray(new int[merged.size()][]);
+        int[][] ans = new int[ansList.size()][2];
+        return ansList.toArray(ans);
     }
 
 }
