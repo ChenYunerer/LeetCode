@@ -36,39 +36,39 @@ public class Solution {
     }
 
     public void setZeroes1(int[][] matrix) {
-        int m = matrix.length;
-        int n = matrix[0].length;
-        boolean firstCol = false;
+        int rows = matrix.length;
+        int columns = matrix[0].length;
+        boolean firstColumn = false;
         boolean firstRow = false;
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                if (matrix[i][j] == 0) {
-                    if (i == 0) {
-                        firstCol = true;
-                    }
-                    if (j == 0) {
+        for (int row = 0; row < rows; row++) {
+            for (int column = 0; column < columns; column++) {
+                if (matrix[row][column] == 0) {
+                    if (row == 0) {
                         firstRow = true;
                     }
-                    matrix[i][0] = 0;
-                    matrix[0][j] = 0;
+                    if (column == 0) {
+                        firstColumn = true;
+                    }
+                    matrix[row][0] = 0;
+                    matrix[0][column] = 0;
                 }
             }
         }
-        for (int i = 1; i < m; i++) {
-            for (int j = 1; j < n; j++) {
-                if (matrix[i][0] == 0 || matrix[0][j] == 0) {
-                    matrix[i][j] = 0;
+        for (int row = 1; row < rows; row++) {
+            for (int column = 1; column < columns; column++) {
+                if (matrix[row][0] == 0 || matrix[0][column] == 0) {
+                    matrix[row][column] = 0;
                 }
             }
         }
         if (firstRow) {
-            for (int i = 0; i < m; i++) {
-                matrix[i][0] = 0;
+            for (int column = 0; column < columns; column++) {
+                matrix[0][column] = 0;
             }
         }
-        if (firstCol) {
-            for (int j = 0; j < n; j++) {
-                matrix[0][j] = 0;
+        if (firstColumn) {
+            for (int row = 0; row < rows; row++) {
+                matrix[row][0] = 0;
             }
         }
     }
