@@ -6,6 +6,9 @@ package leetcode_top_100.matrix.lc48;
  */
 public class Solution {
 
+    /**
+     * 空间O(m * n)
+     */
     public void rotate(int[][] matrix) {
         int rows = matrix.length;
         int colums = matrix[0].length;
@@ -19,5 +22,33 @@ public class Solution {
         for (int row = 0; row < rows; row++) {
             System.arraycopy(newMatrix[row], 0, matrix[row], 0, colums);
         }
+    }
+
+    /**
+     * 原地处理
+     */
+    public void rotate1(int[][] matrix) {
+        int rows = matrix.length;
+        int columns = matrix[0].length;
+
+        for (int row = 0; row < rows / 2; row++) {
+            for (int column = 0; column < (columns + 1) / 2; column++) {
+                int changeTime = 0;
+                int cRow = row;
+                int cColumn = column;
+                int temp = matrix[row][column];
+                while (changeTime < 4) {
+                    changeTime++;
+                    int nextRow = cColumn;
+                    int nextColumn = columns - cRow - 1;
+                    int newTemp = matrix[nextRow][nextColumn];
+                    matrix[nextRow][nextColumn] = temp;
+                    temp = newTemp;
+                    cRow = nextRow;
+                    cColumn = nextColumn;
+                }
+            }
+        }
+
     }
 }
