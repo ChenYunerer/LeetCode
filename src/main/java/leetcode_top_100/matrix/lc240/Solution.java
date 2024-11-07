@@ -40,6 +40,9 @@ public class Solution {
         return false;
     }
 
+    /**
+     * 每层做二分查找
+     */
     public boolean searchMatrix1(int[][] matrix, int target) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return false;
