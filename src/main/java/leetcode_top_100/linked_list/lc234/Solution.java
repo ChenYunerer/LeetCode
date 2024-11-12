@@ -47,4 +47,30 @@ public class Solution {
         }
         return pre;
     }
+
+
+    // 递归
+
+    ListNode newHead = null;
+
+    private boolean isPalindrome0(ListNode head) {
+        if (head.next != null) {
+            boolean ans = isPalindrome0(head.next);
+            boolean curAns = ans && newHead.val == head.val;
+            newHead = newHead.next;
+            return curAns;
+        } else {
+            if (newHead.val == head.val) {
+                newHead = newHead.next;
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public boolean isPalindrome1(ListNode head) {
+        newHead = head;
+        return isPalindrome0(head);
+    }
 }
