@@ -3,6 +3,17 @@ package util;
 public class ArrayUtil {
 
 
+    public static void printArray(int[] array) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < array.length; i++) {
+            sb.append(array[i]);
+            if (i < array.length - 1) {
+                sb.append(", "); // 添加逗号和空格
+            }
+        }
+        System.out.println(sb);
+    }
+
     public static void printArray(int[][] array) {
         int rows = array.length;
         int columns = array[0].length;
